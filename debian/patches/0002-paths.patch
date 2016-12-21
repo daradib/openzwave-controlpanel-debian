@@ -1,0 +1,47 @@
+From: Dara Adib <daradib@ocf.berkeley.edu>
+Date: Wed, 21 Dec 2016 17:32:19 -0500
+Subject: paths
+
+Hard-code Debian paths:
+ - OpenZWave config in /etc/openzwave
+ - static web files in /usr/share/openzwave-controlpanel
+---
+ ozwcp.cpp     | 2 +-
+ webserver.cpp | 8 ++++----
+ 2 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/ozwcp.cpp b/ozwcp.cpp
+index 580d70f..55e0e6b 100644
+--- a/ozwcp.cpp
++++ b/ozwcp.cpp
+@@ -792,7 +792,7 @@ int32 main(int32 argc, char* argv[])
+ 	for (i = 0; i < MAX_NODES; i++)
+ 		nodes[i] = NULL;
+ 
+-	Options::Create("./config/", "", "--SaveConfiguration=true --DumpTriggerLevel=0");
++	Options::Create("/etc/openzwave/", "", "--SaveConfiguration=true --DumpTriggerLevel=0");
+ 	Options::Get()->Lock();
+ 
+ 	Manager::Create();
+diff --git a/webserver.cpp b/webserver.cpp
+index f6aa67b..e066f23 100644
+--- a/webserver.cpp
++++ b/webserver.cpp
+@@ -1126,13 +1126,13 @@ int Webserver::Handler (struct MHD_Connection *conn, const char *url,
+ 	if (strcmp(method, MHD_HTTP_METHOD_GET) == 0) {
+ 		if (strcmp(url, "/") == 0 ||
+ 				strcmp(url, "/index.html") == 0)
+-			ret = web_send_file(conn, "cp.html", MHD_HTTP_OK, false);
++			ret = web_send_file(conn, "/usr/share/openzwave-controlpanel/cp.html", MHD_HTTP_OK, false);
+ 		else if (strcmp(url, "/scenes.html") == 0)
+-			ret = web_send_file(conn, "scenes.html", MHD_HTTP_OK, false);
++			ret = web_send_file(conn, "/usr/share/openzwave-controlpanel/scenes.html", MHD_HTTP_OK, false);
+ 		else if (strcmp(url, "/cp.js") == 0)
+-			ret = web_send_file(conn, "cp.js", MHD_HTTP_OK, false);
++			ret = web_send_file(conn, "/usr/share/openzwave-controlpanel/cp.js", MHD_HTTP_OK, false);
+ 		else if (strcmp(url, "/favicon.png") == 0)
+-			ret = web_send_file(conn, "openzwavetinyicon.png", MHD_HTTP_OK, false);
++			ret = web_send_file(conn, "/usr/share/openzwave-controlpanel/openzwavetinyicon.png", MHD_HTTP_OK, false);
+ 		else if (strcmp(url, "/poll.xml") == 0 && (devname != NULL || usb))
+ 			ret = SendPollResponse(conn);
+ 		else if (strcmp(url, "/devices.xml") == 0 && (devname != NULL || usb))
