@@ -1,5 +1,3 @@
- - Use libjs-bootstrap and libjs-jquery packages instead of CDN
-   (lintian privacy-breach-uses-embedded-file).
  - Add manpage for ozwcp binary
    (lintian binary-without-manpage).
  - Change CFLAGS and LDFLAGS in Makefile

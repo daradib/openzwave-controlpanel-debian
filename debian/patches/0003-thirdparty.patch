@@ -1,0 +1,46 @@
+From: Dara Adib <daradib@ocf.berkeley.edu>
+Date: Thu, 22 Dec 2016 15:54:19 -0500
+Subject: thirdparty
+
+Serve third-party Bootstrap and jQuery files from
+/usr/share/javascript instead of external CDN.
+Requires packages libjs-bootstrap and libjs-jquery.
+---
+ cp.html       | 6 +++---
+ webserver.cpp | 6 ++++++
+ 2 files changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/cp.html b/cp.html
+index 465ae27..0fca3a0 100644
+--- a/cp.html
++++ b/cp.html
+@@ -42,9 +42,9 @@
+         <script type="text/javascript" src="cp.js"></script>
+ 
+         <!-- Bootstrap setup -->
+-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
++        <link rel="stylesheet" href="/javascript/bootstrap/css/bootstrap.min.css">
++        <script src="/javascript/jquery/jquery.min.js"></script>
++        <script src="/javascript/bootstrap/js/bootstrap.min.js"></script>
+     </head>
+     <body onload="GetDefaultDevice();" onmousemove="PosToolTip(event);">
+         <h1 id="title">OpenZWave Control Panel</h1>
+diff --git a/webserver.cpp b/webserver.cpp
+index e066f23..1b6c742 100644
+--- a/webserver.cpp
++++ b/webserver.cpp
+@@ -1133,6 +1133,12 @@ int Webserver::Handler (struct MHD_Connection *conn, const char *url,
+ 			ret = web_send_file(conn, "/usr/share/openzwave-controlpanel/cp.js", MHD_HTTP_OK, false);
+ 		else if (strcmp(url, "/favicon.png") == 0)
+ 			ret = web_send_file(conn, "/usr/share/openzwave-controlpanel/openzwavetinyicon.png", MHD_HTTP_OK, false);
++		else if (strcmp(url, "/javascript/bootstrap/css/bootstrap.min.css") == 0)
++			ret = web_send_file(conn, "/usr/share/javascript/bootstrap/css/bootstrap.min.css", MHD_HTTP_OK, false);
++		else if (strcmp(url, "/javascript/bootstrap/js/bootstrap.min.js") == 0)
++			ret = web_send_file(conn, "/usr/share/javascript/bootstrap/js/bootstrap.min.js", MHD_HTTP_OK, false);
++		else if (strcmp(url, "/javascript/jquery/jquery.min.js") == 0)
++			ret = web_send_file(conn, "/usr/share/javascript/jquery/jquery.min.js", MHD_HTTP_OK, false);
+ 		else if (strcmp(url, "/poll.xml") == 0 && (devname != NULL || usb))
+ 			ret = SendPollResponse(conn);
+ 		else if (strcmp(url, "/devices.xml") == 0 && (devname != NULL || usb))

@@ -11,7 +11,7 @@ Vcs-Browser: https://anonscm.debian.org/cgit/debian-iot/openzwave-controlpanel.g
 
 Package: openzwave-controlpanel
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: libjs-bootstrap, libjs-jquery, ${shlibs:Depends}, ${misc:Depends}
 Description: OpenZWave Control Panel
  OpenZWave Control Panel (ozwcp) permits users to query, manage and
  monitor Z-Wave nodes and networks. It provides a web-based user interface.
