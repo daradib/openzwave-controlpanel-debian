@@ -1,5 +1,5 @@
 Source: openzwave-controlpanel
-Section: comm
+Section: non-free/comm
 Priority: optional
 Maintainer: Debian IoT Maintainers <debian-iot-maintainers@lists.alioth.debian.org>
 Uploaders: Dara Adib <daradib@ocf.berkeley.edu>
