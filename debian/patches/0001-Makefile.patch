@@ -3,18 +3,25 @@ Date: Wed, 21 Dec 2016 16:55:01 -0500
 Subject: Makefile
 
 Upstream Makefile is configured to build on Mac OS X.
-Build against packaged Debian libraries instead.
+
+ - Build against packaged Debian libraries instead.
+ - Append CFLAGS to support hardening.
 ---
- Makefile | 29 +++++++++++++----------------
- 1 file changed, 13 insertions(+), 16 deletions(-)
+ Makefile | 33 ++++++++++++++-------------------
+ 1 file changed, 14 insertions(+), 19 deletions(-)
 
 diff --git a/Makefile b/Makefile
-index a2ac64d..387efca 100644
+index a2ac64d..a9bea23 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -21,28 +21,25 @@ DEBUG_LDFLAGS	:= -g
- CFLAGS	:= -c $(DEBUG_CFLAGS)
- LDFLAGS	:= $(DEBUG_LDFLAGS)
+@@ -17,32 +17,27 @@ RELEASE_CFLAGS  := -Wall -Wno-unknown-pragmas -Werror -Wno-format -O3 -DNDEBUG
+ 
+ DEBUG_LDFLAGS	:= -g
+ 
+-# Change for DEBUG or RELEASE
+-CFLAGS	:= -c $(DEBUG_CFLAGS)
+-LDFLAGS	:= $(DEBUG_LDFLAGS)
++CFLAGS += -c -Wall -Wno-unknown-pragmas -Wno-format
  
 -OPENZWAVE := ../open-zwave/
 -LIBMICROHTTPD := -L/usr/local/lib/ -lmicrohttpd
@@ -48,7 +55,7 @@ index a2ac64d..387efca 100644
  
  %.o : %.cpp
  	$(CXX) $(CFLAGS) $(INCLUDES) -o $@ $<
-@@ -59,13 +56,13 @@ ifeq ($(LIBZWAVE),)
+@@ -59,13 +54,13 @@ ifeq ($(LIBZWAVE),)
  	@exit 1
  endif
  

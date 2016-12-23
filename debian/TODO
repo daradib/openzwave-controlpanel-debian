@@ -1,5 +1,3 @@
- - Change CFLAGS and LDFLAGS in Makefile
-   (lintian hardening-no-bindnow, hardening-no-fortify-functions).
  - Consider patching webserver.cpp to use mkstemp instead of mktemp
    and forward change upstream. This would fix a gcc warning.
  - Add a watch file if upstream starts making releases (GitHub #51).
