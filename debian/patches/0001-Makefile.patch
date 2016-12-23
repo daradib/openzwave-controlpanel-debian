@@ -2,10 +2,13 @@ From: Dara Adib <daradib@ocf.berkeley.edu>
 Date: Wed, 21 Dec 2016 16:55:01 -0500
 Subject: Makefile
 
-Upstream Makefile is configured to build on Mac OS X.
+Upstream Makefile was configured to build on Mac OS X.
 
- - Build against packaged Debian libraries instead.
- - Append CFLAGS to support hardening.
+Changes:
+ - Build against libraries packaged in Debian.
+ - Omit indirect libraries to avoid useless dependencies.
+ - Append some CFLAGS instead of defining all CFLAGS
+   to allow hardening with Debian defaults.
 ---
  Makefile | 33 ++++++++++++++-------------------
  1 file changed, 14 insertions(+), 19 deletions(-)
