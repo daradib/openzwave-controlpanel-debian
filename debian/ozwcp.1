@@ -1,0 +1,25 @@
+.TH OZWCP 1 "December 22, 2016"
+.SH NAME
+ozwcp \- OpenZWave Control Panel
+.SH SYNOPSIS
+.B ozwcp
+.RB [ \-d ]
+.RB [ \-p
+.IR port ]
+.SH DESCRIPTION
+OpenZWave Control Panel (\fBozwcp\fP) permits users to query, manage and
+monitor Z-Wave nodes and networks. It provides a web-based user interface.
+.PP
+Once started, use a web browser to connect to the host:port that ozwcp
+is listening on. By default this is <\fIhttp://localhost:8090/\fP>.
+.SH OPTIONS
+.TP
+.B \-d
+Enable debugging.
+.TP
+.BI \-p\  port
+Listen on the specified
+.I port
+instead of 8090.
+.SH SEE ALSO
+.I /usr/share/doc/openzwave-controlpanel/README
