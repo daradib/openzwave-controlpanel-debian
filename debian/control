@@ -13,5 +13,7 @@ Package: openzwave-controlpanel
 Architecture: any
 Depends: libjs-bootstrap, libjs-jquery, ${shlibs:Depends}, ${misc:Depends}
 Description: OpenZWave Control Panel
- OpenZWave Control Panel (ozwcp) permits users to query, manage and
+ OpenZWave Control Panel (ozwcp) permits users to query, manage, and
  monitor Z-Wave nodes and networks. It provides a web-based user interface.
+ Some example uses include adding/removing nodes, testing commands,
+ and viewing/changing node configuration parameters.
