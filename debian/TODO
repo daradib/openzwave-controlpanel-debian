@@ -1,3 +1,7 @@
- - Consider patching webserver.cpp to use mkstemp instead of mktemp
-   and forward change upstream. This would fix a gcc warning.
- - Add a watch file if upstream starts making releases (GitHub #51).
+ * Consider making and contributing some changes upstream.
+  - Add manpage.
+  - Update Makefile. Use conditionals to support different platforms
+    instead of manually commenting/uncommenting lines.
+  - Listen on localhost instead of all interfaces and make this configurable.
+  - Use mkstemp instead of mktemp in webserver.cpp to fix a gcc warning.
+ * Add a watch file if upstream starts making releases (GitHub #51).
