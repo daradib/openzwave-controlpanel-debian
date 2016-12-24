@@ -1,5 +1,6 @@
 openzwave-controlpanel (0.2a+git20161006.a390f35-1) unstable; urgency=medium
 
   * Initial release (Closes: #849010)
+    Thanks to Thorsten Alteholz for advising and sponsoring.
 
  -- Dara Adib <daradib@ocf.berkeley.edu>  Wed, 21 Dec 2016 14:01:50 -0500
