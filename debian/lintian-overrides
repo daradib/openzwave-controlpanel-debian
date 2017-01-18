@@ -1,0 +1,3 @@
+# addd (add device) and addds (add device secure) are not spelling errors.
+spelling-error-in-binary usr/bin/ozwcp addd add
+spelling-error-in-binary usr/bin/ozwcp addds adds
