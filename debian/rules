@@ -1,7 +1,12 @@
 #!/usr/bin/make -f
 #DH_VERBOSE = 1
 
+# Enable hardened build flags and append CPPFLAGS to CFLAGS
+# (e.g., -D_FORTIFY_SOURCE=2) to support upstream Makefile.
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
+CFLAGS+=$(CPPFLAGS)
 
 %:
 	dh $@
