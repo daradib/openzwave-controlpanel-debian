@@ -1,3 +1,12 @@
+openzwave-controlpanel (0.2a+git20161006.a390f35-2) unstable; urgency=medium
+
+  * Append CPPFLAGS to CFLAGS to enable FORTIFY hardening.
+  * Add debian/watch file in case upstream starts releasing.
+  * Override lintian informational tags about spelling.
+  * Update debian/copyright URL to use https.
+
+ -- Dara Adib <daradib@ocf.berkeley.edu>  Wed, 25 Jan 2017 18:16:15 -0500
+
 openzwave-controlpanel (0.2a+git20161006.a390f35-1) unstable; urgency=medium
 
   * Initial release. (Closes: #849010)
