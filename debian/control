@@ -3,7 +3,7 @@ Section: non-free/comm
 Priority: optional
 Maintainer: Debian IoT Maintainers <debian-iot-maintainers@lists.alioth.debian.org>
 Uploaders: Dara Adib <daradib@ocf.berkeley.edu>
-Build-Depends: debhelper (>= 9), libopenzwave1.5-dev, libmicrohttpd-dev
+Build-Depends: debhelper (>= 9), libmicrohttpd-dev, libopenzwave1.5-dev
 Standards-Version: 3.9.8
 Homepage: https://github.com/OpenZWave/open-zwave-control-panel
 Vcs-Git: https://anonscm.debian.org/git/debian-iot/openzwave-controlpanel.git
@@ -11,7 +11,7 @@ Vcs-Browser: https://anonscm.debian.org/cgit/debian-iot/openzwave-controlpanel.g
 
 Package: openzwave-controlpanel
 Architecture: any
-Depends: libjs-bootstrap, libjs-jquery, ${shlibs:Depends}, ${misc:Depends}
+Depends: libjs-bootstrap, libjs-jquery, ${misc:Depends}, ${shlibs:Depends}
 Description: OpenZWave Control Panel
  OpenZWave Control Panel (ozwcp) permits users to query, manage, and
  monitor Z-Wave nodes and networks. It provides a web-based user interface.
