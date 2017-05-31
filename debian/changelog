@@ -1,4 +1,4 @@
-openzwave-controlpanel (0.2a+git20161006.a390f35-2) unstable; urgency=medium
+openzwave-controlpanel (0.2a+git20161006.a390f35-2) UNRELEASED; urgency=medium
 
   * Append CPPFLAGS to CFLAGS to enable FORTIFY hardening.
   * Add debian/watch file in case upstream starts releasing.
