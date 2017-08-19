@@ -14,7 +14,7 @@ Changes:
  1 file changed, 14 insertions(+), 19 deletions(-)
 
 diff --git a/Makefile b/Makefile
-index a2ac64d..a9bea23 100644
+index a2ac64d..ca3b5c0 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -17,32 +17,27 @@ RELEASE_CFLAGS  := -Wall -Wno-unknown-pragmas -Werror -Wno-format -O3 -DNDEBUG
@@ -24,7 +24,7 @@ index a2ac64d..a9bea23 100644
 -# Change for DEBUG or RELEASE
 -CFLAGS	:= -c $(DEBUG_CFLAGS)
 -LDFLAGS	:= $(DEBUG_LDFLAGS)
-+CFLAGS += -c -Wall -Wno-unknown-pragmas -Wno-format
++CFLAGS += -c -Wall -Wno-unknown-pragmas -Wno-format -Wno-format-security
  
 -OPENZWAVE := ../open-zwave/
 -LIBMICROHTTPD := -L/usr/local/lib/ -lmicrohttpd
