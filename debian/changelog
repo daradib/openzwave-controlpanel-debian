@@ -1,4 +1,4 @@
-openzwave-controlpanel (0.2a+git20161006.a390f35-2) UNRELEASED; urgency=medium
+openzwave-controlpanel (0.2a+git20161006.a390f35-2) unstable; urgency=medium
 
   * Append CPPFLAGS to CFLAGS to enable FORTIFY hardening.
   * Add debian/watch file in case upstream starts releasing.
@@ -7,7 +7,7 @@ openzwave-controlpanel (0.2a+git20161006.a390f35-2) UNRELEASED; urgency=medium
   * Add -Wno-format-security flag. (Closes: #871217)
   * Bump Standards-Version to 4.0.1.
 
- -- Dara Adib <daradib@ocf.berkeley.edu>  Sat, 19 Aug 2017 17:39:54 -0400
+ -- Dara Adib <daradib@ocf.berkeley.edu>  Sat, 19 Aug 2017 18:32:25 -0400
 
 openzwave-controlpanel (0.2a+git20161006.a390f35-1) unstable; urgency=medium
 
