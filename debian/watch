@@ -1,5 +1,0 @@
-# Upstream does not do releases currently, see issue #51:
-# https://github.com/OpenZWave/open-zwave-control-panel/issues/51
-version=3
-opts=filenamemangle=s/.+\/v?(\d\S+)\.tar\.gz/open-zwave-control-panel-$1\.tar\.gz/ \
-  https://github.com/OpenZWave/open-zwave-control-panel/tags .*/v?(\d\S+)\.tar\.gz
